@@ -2,9 +2,27 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    //var countries = (QuickType.Country[]) ViewData["Country"];
+    List<QuickType.Count> random1 = (List<QuickType.Count>)ViewData["Countries"];
+
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Country</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Code</th>
+        </tr>
+        @{
+            foreach (QuickType.Count coun in random1)
+            {
+                <tr>
+                    <td>@coun.Name</td>
+                    <td>@coun.Code</td>
+
+                </tr>
+ }
+        }
+    </table>
 </div>
