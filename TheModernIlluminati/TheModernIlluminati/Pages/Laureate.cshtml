@@ -1,0 +1,32 @@
+﻿@page
+@model TheModernIlluminati.Pages.LaureateModel
+@{
+    ViewData["Title"] = "Laureate";
+    List<TheModernIlluminati.Models.Laureate>
+    laureate1 = (List<TheModernIlluminati.Models.Laureate>
+        )ViewData["Laureates"];
+        <div>
+            <h1 class="display-4">Laureates</h1>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Country</th>
+                </tr>
+                @{
+                    foreach (TheModernIlluminati.Models.Laureate laureate3 in laureate1)
+                    {
+                        <tr>
+                            <td>@laureate3.Id</td>
+                            <td>@laureate3.Firstname</td>
+                            <td>@laureate3.Surname</td>
+                            <td>@laureate3.BornCountryCode</td>
+
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+        }
+
