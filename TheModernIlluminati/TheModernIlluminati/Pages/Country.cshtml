@@ -1,0 +1,28 @@
+﻿@page
+@model TheModernIlluminati.Pages.CountryModel
+@{
+    ViewData["Title"] = "Country";
+    List<TheModernIlluminati.Models.Count>
+    random1 = (List<TheModernIlluminati.Models.Count>
+        )ViewData["Countries"];
+    <div>
+        <h1 class="display-4">Country</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Code</th>
+            </tr>
+            @{
+                foreach (TheModernIlluminati.Models.Count coun in random1)
+                {
+                        <tr>
+                            <td>@coun.Name</td>
+                            <td>@coun.Code</td>
+
+                        </tr>
+                }
+            }
+        </table>
+    </div>
+}
+
