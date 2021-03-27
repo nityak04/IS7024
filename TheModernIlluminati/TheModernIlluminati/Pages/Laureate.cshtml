@@ -5,28 +5,208 @@
     List<TheModernIlluminati.Models.Laureate>
     laureate1 = (List<TheModernIlluminati.Models.Laureate>
         )ViewData["Laureates"];
-        <div>
-            <h1 class="display-4">Laureates</h1>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Country</th>
-                </tr>
+    <div class="w3-responsive">
+        <table class="w3-table-all">
+            <tr>
+                <td>
+                    <div id="carouselExampleCaption1" class="carousel slide" data-ride="carousel" style="height:200px;width:300px">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleCaption1" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleCaption1" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleCaption1" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleCaption1" data-slide-to="3"></li>
+                            <li data-target="#carouselExampleCaption1" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/MicrosoftTeams-image (14).png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/MicrosoftTeams-image (15).png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item active text-center" data-interval="2000">
+                                <img src="~/images/MicrosoftTeams-image (16).png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/MicrosoftTeams-image (17).png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/MicrosoftTeams-image (18).png" accesskeywidth="300" height="200">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleCaption1" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" style="background-color:#C5C6C7" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleCaption1" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" style="background-color:#C5C6C7" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <div id="carouselExampleCaption2" class="carousel slide" data-ride="carouse2" style="height:200px;width:300px">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleCaption2" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleCaption2" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleCaption2" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleCaption2" data-slide-to="3"></li>
+                            <li data-target="#carouselExampleCaption2" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/MicrosoftTeams-image (19).png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/MicrosoftTeams-image (20).png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item active text-center" data-interval="2000">
+                                <img src="~/images/MicrosoftTeams-image (21).png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/a.png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/b.png" accesskeywidth="300" height="200">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleCaption2" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" style="background-color:#C5C6C7" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleCaption2" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" style="background-color:#C5C6C7" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>             
+                </td>
+                <td>
+                    <div id="carouselExampleCaption3" class="carousel slide" data-ride="carouse3" style="height:200px;width:300px">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleCaption3" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleCaption3" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleCaption3" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleCaption3" data-slide-to="3"></li>
+                            <li data-target="#carouselExampleCaption3" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/c.png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/d.png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item active text-center" data-interval="2000">
+                                <img src="~/images/e.png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/f.png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/g.png" accesskeywidth="300" height="200">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleCaption3" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" style="background-color:#C5C6C7" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleCaption3" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" style="background-color:#C5C6C7" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </td>
+                <td>
+                    <div id="carouselExampleCaption5" class="carousel slide" data-ride="carouse5" style="height:200px;width:300px">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleCaption5" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleCaption5" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleCaption5" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleCaption5" data-slide-to="3"></li>
+                            <li data-target="#carouselExampleCaption5" data-slide-to="4"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/i.png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/j.png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item active text-center" data-interval="2000">
+                                <img src="~/images/k.png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/d.png" width="300" height="200">
+                            </div>
+                            <div class="carousel-item" data-interval="2000">
+                                <img src="~/images/e.png" accesskeywidth="300" height="200">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleCaption5" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" style="background-color:#C5C6C7" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleCaption5" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" style="background-color:#C5C6C7" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </td>
+               </tr>
+           </table>
+        </div>
+
+    <div>
+        <h1 class="display-4">Laureates</h1>
+
+        <table class="table table-striped table-light">
+            <thead class="thead-dark">
+            <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Born City</th>
+            <th>Born</th>
+     
+            <th>Gender</th>
+            <th>Year of Winning</th>
+            <th>Category</th>
+            <th>Share</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
                 @{
-                    foreach (TheModernIlluminati.Models.Laureate laureate3 in laureate1)
+                    foreach (var laureate3 in laureate1)
                     {
+                       int i = 0;
                         <tr>
-                            <td>@laureate3.Id</td>
                             <td>@laureate3.Firstname</td>
                             <td>@laureate3.Surname</td>
-                            <td>@laureate3.BornCountryCode</td>
+                            <td>@laureate3.BornCity</td>
+                            <td>@laureate3.Born</td>
+                            <td>@laureate3.Gender</td>
+                            
+                                @foreach (var prizes in laureate3.Prizes)
+                                {
+                                  @if(i == 0) 
+                                   {
+
+                                    <td>@prizes.Year</td>
+                                    <td>@prizes.Category</td>
+                                    <td>@prizes.Share</td>
+                                     i = i + 1;
+                                  }
+
+                                 }
+                                                     
 
                         </tr>
+
                     }
                 }
-            </table>
-        </div>
-        }
+            </tbody>
+        </table>
+    </div>
+}
 

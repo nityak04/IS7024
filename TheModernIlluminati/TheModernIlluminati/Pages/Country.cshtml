@@ -5,23 +5,32 @@
     List<TheModernIlluminati.Models.Count>
     random1 = (List<TheModernIlluminati.Models.Count>
         )ViewData["Countries"];
+
+    <div class="jumbotron text-center">
+        <h2 class = "text-dark" >List of Countries with Nobel Laureates </h2>
+        <p class="p-3 mb-2 bg-secondary text-white">Some text here!</p>
+        <img class="img-fluid , border-dark " src="~/images/MicrosoftTeams-image (12).png"  >
+    </div>
     <div>
-        <h1 class="display-4">Country</h1>
-        <table>
-            <tr>
-                <th>Name</th>
-                <th>Code</th>
-            </tr>
-            @{
-                foreach (TheModernIlluminati.Models.Count coun in random1)
-                {
+        <table class="table table-striped table-light">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Country Code</th>
+                    <th>Country Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (TheModernIlluminati.Models.Count coun in random1)
+                    {
                         <tr>
-                            <td>@coun.Name</td>
                             <td>@coun.Code</td>
+                            <td>@coun.Name</td>
 
                         </tr>
+                    }
                 }
-            }
+            </tbody>
         </table>
     </div>
 }

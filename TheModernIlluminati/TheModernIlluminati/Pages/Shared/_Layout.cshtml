@@ -1,17 +1,17 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
+<head style="background-color: black">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - The Modern Illuminati</title>
+    <title style="background-color: black ;color:#C5C6C7 ">@ViewData["Title"] - The Modern Illuminati</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">The Modern Illuminati</a>
+<body style="background-color: #0B0C10;color:#C5C6C7">
+    <header style="background-color: #0B0C10;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <nav class="navbar navbar-expand-lg navbar-toggleable-lg navbar-light box-shadow mb-3">
+            <div style="background-color: #45A29E" class="container">
+                <a style="font-family: 'Times New Roman'; font-size: xx-large ;color:white" class="navbar-brand" asp-page="/Index"><b>The Modern Illuminati</b></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -19,16 +19,20 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a style="font-family: 'Times New Roman', Times, serif; color:white;" class="nav-link" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a style="font-family: 'Times New Roman', Times, serif; color:white;" class="nav-link" asp-page="/Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Laureate">Laureates</a>
+                            <a style="font-family: 'Times New Roman', Times, serif; color:white;" class="nav-link" asp-page="/Country">Country</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Country">Country</a>
+                            <a style="font-family: 'Times New Roman', Times, serif; color:white;" class="nav-link" asp-page="/Laureate">Laureates</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a style="font-family: 'Times New Roman', Times, serif; color:white;" class="nav-link" asp-page="/SearchCountry">Search</a>
                         </li>
                     </ul>
                 </div>
@@ -41,9 +45,14 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - TheModernIlluminati - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer class="footer text-center text-white">
+     
+        <div class="container-fluid">
+            <div style="display:inline-flex" class="row">
+                <div class="col-auto border-right border-dark">
+                    <p style="font-family: 'Segoe UI'; font-size: 15px">2021 &copy - <strong>The Modern Illuminati</strong></p>
+                 </div>
+              </div>
         </div>
     </footer>
 
