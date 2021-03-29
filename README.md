@@ -32,11 +32,11 @@
 
 #### Requirement 1.1  
 
-Scenario:  A user would be able to find which nobel laureates are born in a country and which date.  
+Scenario:  A user would be able to find which nobel laureates are born in a country.  
 
 #### Requirement 1.2  
 
-Scenario:  A user would be able to search nobel laureates by Category and Year  
+Scenario:  A user would be able to see all the nobel laureates data
 
 ---
 
