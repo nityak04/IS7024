@@ -24,8 +24,8 @@
 
 ## Data Feeds  
 
-- Nobel Laureates Data: http://api.nobelprize.org/v1/prize.json
-- World Countries: https://datahub.io/core/country-list/r/0.html  
+- Nobel Laureates Data: http://api.nobelprize.org/v1/laureate.json
+- World Countries: http://api.nobelprize.org/v1/country.json
 ---  
 
 ## Functional Requirements  
