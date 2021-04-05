@@ -25,8 +25,8 @@ namespace TheModernIlluminati.Pages
            
             using (var webClient = new WebClient())
             {
-                String countryJSON = webClient.DownloadString("http://api.nobelprize.org/v1/country.json");
-                    Country country = Country.FromJson(countryJSON);
+                String countryList = webClient.DownloadString("http://api.nobelprize.org/v1/country.json");
+                    Country country = Country.FromJson(countryList);
                     List<Count> random1 = country.Countries;
                 int i = 0;
                 foreach (var coun in random1)
@@ -39,8 +39,8 @@ namespace TheModernIlluminati.Pages
                     }
 
                 IDictionary<long, TheModernIlluminati.Models.Nobel> allNobels = new Dictionary<long, TheModernIlluminati.Models.Nobel>();
-                string nobelJSON = webClient.DownloadString("http://api.nobelprize.org/v1/laureate.json");
-                TheModernIlluminati.Models.Nobel nobel = TheModernIlluminati.Models.Nobel.FromJson(nobelJSON);
+                string nobelLaureateDetails = webClient.DownloadString("http://api.nobelprize.org/v1/laureate.json");
+                TheModernIlluminati.Models.Nobel nobel = TheModernIlluminati.Models.Nobel.FromJson(nobelLaureateDetails);
                 List<TheModernIlluminati.Models.Laureate> laureate1 = nobel.Laureates;
                 List<TheModernIlluminati.Models.Laureate> laureate2 = new List<TheModernIlluminati.Models.Laureate>();
                
