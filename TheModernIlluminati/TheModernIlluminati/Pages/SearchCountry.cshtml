@@ -5,43 +5,43 @@
     List<TheModernIlluminati.Models.Laureate>
       filteredLaureates = (List<TheModernIlluminati.Models.Laureate>
       )ViewData["filteredLaureate"];
-}     
-      
+}
 
-    <h1>Search by Country</h1>
 
-    <form action="" method="POST" style="margin-top: 50px;">
-        <div class="form-group">
-            <label style="font-size:20px;" class="control-label" for="CountrySearch"><strong>Enter Country</strong></label>
-            <input type="text" class="form-control" name="CountrySearch" id="CountrySearch" style="width:50%" />
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Search for Laureates" class="btn btn-primary" />
-        </div>
-    </form>
+<h1>Search by Country</h1>
 
-    @if (Model.searchFinished == true)
-    {
-        <table class="table table-striped table-light">
-            <thead class="thead-dark">
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Born City</th>
-                    <th>Born</th>
-                    <th>Birth Country</th>
-                    <th>Gender</th>
-                    <th>Year of Winning</th>
-                    <th>Category</th>
-                    <th>Share</th>
+<form action="" method="POST" style="margin-top: 50px;">
+    <div class="form-group">
+        <label style="font-size:20px;" class="control-label" for="CountrySearch"><strong>Enter Country</strong></label>
+        <input type="text" class="form-control" name="CountrySearch" id="CountrySearch" style="width:50%" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Search for Laureates" class="btn btn-primary" />
+    </div>
+</form>
 
-                </tr>
-            </thead>
-            <tbody>
 
-                @foreach (var laureate in filteredLaureates)
-                {
-                    int i = 0;
+@if (filteredLaureates != null )
+{  
+    <table class="table table-striped table-light">
+        <thead class="thead-dark">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Born City</th>
+                <th>Born</th>
+                <th>Birth Country</th>
+                <th>Gender</th>
+                <th>Year of Winning</th>
+                <th>Category</th>
+                <th>Share</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var laureate in filteredLaureates)
+            {
                 <tr>
                     <td>@laureate.Firstname</td>
                     <td>@laureate.Surname</td>
@@ -49,25 +49,17 @@
                     <td>@laureate.Born</td>
                     <td>@laureate.BornCountry</td>
                     <td>@laureate.Gender</td>
+                    <td>@laureate.Prizes[0].Year</td>
+                    <td>@laureate.Prizes[0].Category</td>
+                    <td>@laureate.Prizes[0].Share</td>
 
-                    @foreach (var prizes in laureate.Prizes)
-                    {
-                        @if (i == 0)
-                        {
-
-                            <td>@prizes.Year</td>
-                            <td>@prizes.Category</td>
-                            <td>@prizes.Share</td>
-                            i = i + 1;
-                        }
-
-                    }
+                   
                 </tr>
-                }
+            }
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 
-    }
+}
 

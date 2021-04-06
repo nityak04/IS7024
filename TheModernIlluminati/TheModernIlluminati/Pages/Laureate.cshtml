@@ -2,9 +2,7 @@
 @model TheModernIlluminati.Pages.LaureateModel
 @{
     ViewData["Title"] = "Laureate";
-    List<TheModernIlluminati.Models.Laureate>
-    laureate1 = (List<TheModernIlluminati.Models.Laureate>
-        )ViewData["Laureates"];
+    List<TheModernIlluminati.Models.Laureate> laureates = (List<TheModernIlluminati.Models.Laureate>)ViewData["Laureates"];
     <div class="w3-responsive">
         <table class="w3-table-all">
             <tr>
@@ -177,17 +175,17 @@
             <tbody>
 
                 @{
-                    foreach (var laureate3 in laureate1)
+                    foreach (var laureate in laureates)
                     {
                        int i = 0;
                         <tr>
-                            <td>@laureate3.Firstname</td>
-                            <td>@laureate3.Surname</td>
-                            <td>@laureate3.BornCity</td>
-                            <td>@laureate3.Born</td>
-                            <td>@laureate3.Gender</td>
+                            <td>@laureate.Firstname</td>
+                            <td>@laureate.Surname</td>
+                            <td>@laureate.BornCity</td>
+                            <td>@laureate.Born</td>
+                            <td>@laureate.Gender</td>
                             
-                                @foreach (var prizes in laureate3.Prizes)
+                                @foreach (var prizes in laureate.Prizes)
                                 {
                                   @if(i == 0) 
                                    {

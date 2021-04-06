@@ -11,7 +11,7 @@ namespace TheModernIlluminati.Pages
 {
     public class SearchCountryModel : PageModel
     {
-        public bool searchFinished { get; set; }
+        
         [BindProperty]
         public string CountrySearch { get; set; }
         public string CountryCode { get; set; }
@@ -19,17 +19,21 @@ namespace TheModernIlluminati.Pages
         {
 
         }
-         public void OnPost()
+         public IActionResult OnPost()
         {
-
+            if (CountrySearch == null) { 
+                
+                return Page(); 
+            
+            }
            
             using (var webClient = new WebClient())
             {
                 String countryJSON = webClient.DownloadString("http://api.nobelprize.org/v1/country.json");
                     Country country = Country.FromJson(countryJSON);
-                    List<Count> random1 = country.Countries;
+                    List<Count> countries = country.Countries;
                 int i = 0;
-                foreach (var coun in random1)
+                foreach (var coun in countries)
                     {
                        if (CountrySearch == coun.Name && i == 0)
                          {
@@ -41,21 +45,28 @@ namespace TheModernIlluminati.Pages
                 IDictionary<long, TheModernIlluminati.Models.Nobel> allNobels = new Dictionary<long, TheModernIlluminati.Models.Nobel>();
                 string nobelJSON = webClient.DownloadString("http://api.nobelprize.org/v1/laureate.json");
                 TheModernIlluminati.Models.Nobel nobel = TheModernIlluminati.Models.Nobel.FromJson(nobelJSON);
-                List<TheModernIlluminati.Models.Laureate> laureate1 = nobel.Laureates;
-                List<TheModernIlluminati.Models.Laureate> laureate2 = new List<TheModernIlluminati.Models.Laureate>();
+                List<TheModernIlluminati.Models.Laureate> nobelLaureates = nobel.Laureates;
+                List<TheModernIlluminati.Models.Laureate> laureates = new List<TheModernIlluminati.Models.Laureate>();
                
-                foreach (var laureate4 in laureate1)
+                foreach (var laureate in nobelLaureates)
                 {
-                    if (laureate4.BornCountryCode == CountryCode)
+                    if (laureate.BornCountryCode == CountryCode && laureate.Gender.ToString()!= "Org")
                     {
-                        laureate2.Add(laureate4);
+                       
+                        laureates.Add(laureate);
                     }
 
                 }
-                ViewData["filteredLaureate"] = laureate2;
+
+                if (laureates.Count() != 0)
+                {
+                    ViewData["filteredLaureate"] = laureates;
+                }
+               
 
             }
-            searchFinished = true;
+            
+            return Page();
         }
     }
 }
