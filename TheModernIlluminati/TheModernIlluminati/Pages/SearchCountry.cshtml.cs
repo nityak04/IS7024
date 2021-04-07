@@ -14,7 +14,6 @@ namespace TheModernIlluminati.Pages
     {
         public string _CountrySearch;
 
-        TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
         public bool searchFinished { get; set; }
         [BindProperty]
 
@@ -23,10 +22,7 @@ namespace TheModernIlluminati.Pages
         public string CountryCode { get; set; }
 
        
-    public static string ToTitleCase(string title)
-    {
-        return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(title.ToLower());
-    }
+   
 
     public void OnGet()
         {
