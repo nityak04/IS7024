@@ -6,16 +6,25 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using TheModernIlluminati.Models;
+using System.Globalization;
 
 namespace TheModernIlluminati.Pages
 {
     public class SearchCountryModel : PageModel
     {
+        public string _CountrySearch;
+
         public bool searchFinished { get; set; }
         [BindProperty]
-        public string CountrySearch { get; set; }
+
+        
+        public string CountrySearch { get; set;}
         public string CountryCode { get; set; }
-        public void OnGet()
+
+       
+   
+
+    public void OnGet()
         {
 
         }
@@ -29,9 +38,11 @@ namespace TheModernIlluminati.Pages
                     Country country = Country.FromJson(countryJSON);
                     List<Count> random1 = country.Countries;
                 int i = 0;
+                TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
+                var TitleCountry = myTI.ToTitleCase(CountrySearch);
                 foreach (var coun in random1)
                     {
-                       if (CountrySearch == coun.Name && i == 0)
+                       if ( TitleCountry == coun.Name && i == 0)
                          {
                             CountryCode = coun.Code ;
                             i++ ;        
@@ -56,6 +67,7 @@ namespace TheModernIlluminati.Pages
 
             }
             searchFinished = true;
+            
         }
     }
 }
