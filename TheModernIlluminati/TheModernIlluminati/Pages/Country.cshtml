@@ -3,8 +3,7 @@
 @{
     ViewData["Title"] = "Country";
     List<TheModernIlluminati.Models.Count>
-    random1 = (List<TheModernIlluminati.Models.Count>
-        )ViewData["Countries"];
+       countries  = (List<TheModernIlluminati.Models.Count> )ViewData["Countries"];
 
     <div class="jumbotron text-center">
         <h2 class = "text-dark" >List of Countries with Nobel Laureates </h2>
@@ -21,11 +20,11 @@
             </thead>
             <tbody>
                 @{
-                    foreach (TheModernIlluminati.Models.Count coun in random1)
+                    foreach (TheModernIlluminati.Models.Count country in countries)
                     {
                         <tr>
-                            <td>@coun.Code</td>
-                            <td>@coun.Name</td>
+                            <td>@country.Code</td>
+                            <td>@country.Name</td>
 
                         </tr>
                     }

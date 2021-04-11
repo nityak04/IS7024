@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Globalization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -11,6 +10,7 @@ namespace TheModernIlluminati.Models
     {
         [JsonProperty("laureates")]
         public List<Laureate> Laureates { get; set; }
+        public Laureate[] LaureateArray{ get; set; }
     }
 
     public partial class Laureate

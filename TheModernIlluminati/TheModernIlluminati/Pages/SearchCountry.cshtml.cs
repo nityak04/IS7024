@@ -59,6 +59,7 @@ namespace TheModernIlluminati.Pages
                 {
                     if (laureate4.BornCountryCode == CountryCode)
                     {
+                   
                         laureate2.Add(laureate4);
                     }
 
