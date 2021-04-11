@@ -19,19 +19,19 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item" data-interval="2000">
-                                <img src="~/images/MicrosoftTeams-image (14).png" width="300" height="200">
+                                <img src="~/images/MicrosoftTeams-image (14).png" width="300" height="200" alt="LauerateImage">
                             </div>
                             <div class="carousel-item" data-interval="2000">
-                                <img src="~/images/MicrosoftTeams-image (15).png" width="300" height="200">
+                                <img src="~/images/MicrosoftTeams-image (15).png" width="300" height="200" alt="LauerateImage">
                             </div>
                             <div class="carousel-item active text-center" data-interval="2000">
-                                <img src="~/images/MicrosoftTeams-image (16).png" width="300" height="200">
+                                <img src="~/images/MicrosoftTeams-image (16).png" width="300" height="200" alt="LauerateImage">
                             </div>
                             <div class="carousel-item" data-interval="2000">
-                                <img src="~/images/MicrosoftTeams-image (17).png" width="300" height="200">
+                                <img src="~/images/MicrosoftTeams-image (17).png" width="300" height="200" alt="LauerateImage">
                             </div>
                             <div class="carousel-item" data-interval="2000">
-                                <img src="~/images/MicrosoftTeams-image (18).png" accesskeywidth="300" height="200">
+                                <img src="~/images/MicrosoftTeams-image (18).png" accesskeywidth="300" height="200" alt="LauerateImage">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleCaption1" role="button" data-slide="prev">
@@ -158,20 +158,42 @@
 
     <div>
         <h1 class="display-4">Laureates</h1>
+        <style>
+            table {
+                border-collapse: separate;
+                border-spacing: 0 15px;
+            }
+
+            th {
+                background-color: #4287f5;
+                color: white;
+            }
+
+            th,
+            td {
+                width: 150px;
+                text-align: center;
+                border: 1px solid black;
+                padding: 5px;
+            }
+
+            h2 {
+                color: #4287f5;
+            }
+        </style>
 
         <table class="table table-striped table-light">
             <thead class="thead-dark">
-            <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Born City</th>
-            <th>Born</th>
-     
-            <th>Gender</th>
-            <th>Year of Winning</th>
-            <th>Category</th>
-            <th>Share</th>
-            </tr>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Born City</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Year of Winning</th>
+                    <th>Category</th>
+                    <th>Share</th>
+                </tr>
             </thead>
 
             <tbody>
@@ -179,27 +201,27 @@
                 @{
                     foreach (var laureate3 in laureate1)
                     {
-                       int i = 0;
+                        int i = 0;
                         <tr>
                             <td>@laureate3.Firstname</td>
                             <td>@laureate3.Surname</td>
                             <td>@laureate3.BornCity</td>
                             <td>@laureate3.Born</td>
                             <td>@laureate3.Gender</td>
-                            
-                                @foreach (var prizes in laureate3.Prizes)
+
+                            @foreach (var prizes in laureate3.Prizes)
+                            {
+                                @if (i == 0)
                                 {
-                                  @if(i == 0) 
-                                   {
 
                                     <td>@prizes.Year</td>
                                     <td>@prizes.Category</td>
                                     <td>@prizes.Share</td>
-                                     i = i + 1;
-                                  }
+                                    i = i + 1;
+                                }
 
-                                 }
-                                                     
+                            }
+
 
                         </tr>
 

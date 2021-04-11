@@ -24,19 +24,19 @@
 
 ## Data Feeds  
 
-- Nobel Laureates Data: http://api.nobelprize.org/v1/prize.json
-- World Countries: https://datahub.io/core/country-list/r/0.html  
+- Nobel Laureates Data: http://api.nobelprize.org/v1/laureate.json
+- World Countries: http://api.nobelprize.org/v1/country.json
 ---  
 
 ## Functional Requirements  
 
 #### Requirement 1.1  
 
-Scenario:  A user would be able to find which nobel laureates are born in a country and which date.  
+Scenario:  A user would be able to find which nobel laureates are born in a country.  
 
 #### Requirement 1.2  
 
-Scenario:  A user would be able to search nobel laureates by Category and Year  
+Scenario:  A user would be able to see all the nobel laureates data
 
 ---
 
