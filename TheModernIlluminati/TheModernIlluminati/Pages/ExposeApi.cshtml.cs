@@ -25,7 +25,7 @@ namespace TheModernIlluminati.Pages
             {
                 url = url + "bornCountry=" + country;
             }
-b
+
             string laureateDetails = getData(url);
 
              Nobel array =  Nobel.FromJson(laureateDetails);
