@@ -3,14 +3,20 @@
 @{
     ViewData["Title"] = "ApiJSONOutput";
 }
-<h1>Nobel Laureates by country JSON API</h1>
-<hr>
-<h5>Outputting Nobel laureates by Country</h5>
+
+<div class="container-fluid">
+    <h1 style="font-family: fantasy; text-align:center; font-size: 50px; color: #45A29E">JSON Output</h1>
+</div>
+
+<hr class="bg-white" />
 
 
-<p>The API accepts contry as a 2 or 3 digit code or the country name as a whole and gives the list of nobel laureates from the country as a joson data</p>
+<div class="container-fluid">
+    <p style="font-family: 'Times New Roman'; text-align:center; font-size: 30px">Provide 2-3 character Country code from the Countries list and get a JSON 
+    stream of Nobel Laureates from that Country.</p>
+</div>
 
-
-<p>
-    Following is the url to get the nobel laureates by country : <a asp-page="/ExposeApi" asp-route-country="IN">Nobel laureates from the India</a>
-</p>
+<div class="container-fluid">
+    <p style="font-family: 'Times New Roman'; text-align:center; font-size: 30px">You can use this URL to get a JSON Stream of 
+    <a asp-page="/ExposeApi" asp-route-country="IN">Nobel laureates from India</a></p>
+</div>

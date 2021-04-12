@@ -3,12 +3,15 @@
 @{
     ViewData["Title"] = "Country";
     List<TheModernIlluminati.Models.Count>
-       countries  = (List<TheModernIlluminati.Models.Count> )ViewData["Countries"];
+       countries = (List<TheModernIlluminati.Models.Count>)ViewData["Countries"];
 
+    <div class="container-fluid">
+        <h1 style="font-family: fantasy; text-align:center; font-size: 50px; color: #45A29E">List of Countries with Nobel Laureates</h1>
+    </div>
+    <hr class="bg-white" />
     <div class="jumbotron text-center">
-        <h2 class = "text-dark" >List of Countries with Nobel Laureates </h2>
-        <p class="p-3 mb-2 bg-secondary text-white">Please find the country codes below!</p>
-        <img class="img-fluid , border-dark " src="~/images/MicrosoftTeams-image (12).png"  >
+        <p class="p-3 mb-2 bg-secondary text-white">Find the Country and Country Codes!!</p>
+        <img class="img-fluid , border-dark " src="~/images/MicrosoftTeams-image (12).png">
     </div>
     <div>
         <table class="table table-striped table-light">
