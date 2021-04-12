@@ -4,10 +4,7 @@
     ViewData["Title"] = "Laureate";
     List<TheModernIlluminati.Models.Laureate>
     laureate = (List<TheModernIlluminati.Models.Laureate>)ViewData["Laureates"];
-    <div class="container-fluid">
-        <h1 style="font-family: fantasy; text-align:center; font-size: 50px; color: #45A29E">List of Nobel Prize Winners</h1>
-    </div>
-    <hr class="bg-white" />
+    <link rel="stylesheet" href="/css/StyleSheet.css" media="only screen and (min-width: 800px)" type="text/css" />
     <div class="w3-responsive">
         <table class="w3-table-all">
             <tr>
@@ -158,32 +155,9 @@
             </tr>
         </table>
     </div>
+      
+        <h1 class="display-4">Laureates</h1>
 
-    <div>
-        <hr class="bg-white" />
-        <style>
-            table {
-                border-collapse: separate;
-                border-spacing: 0 15px;
-            }
-
-            th {
-                background-color: #4287f5;
-                color: white;
-            }
-
-            th,
-            td {
-                width: 150px;
-                text-align: center;
-                border: 1px solid black;
-                padding: 5px;
-            }
-
-            h2 {
-                color: #4287f5;
-            }
-        </style>
 
         <table class="table table-striped table-light">
             <thead class="thead-dark">

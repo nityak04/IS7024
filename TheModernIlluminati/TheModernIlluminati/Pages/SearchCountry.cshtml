@@ -8,18 +8,34 @@
 }
 
 
-<div class="container-fluid">
-    <h1 style="font-family: fantasy; text-align:center; font-size: 50px; color: #45A29E">Search Nobel Laureates by Country</h1>
-</div>
-<hr class="bg-white" />
+<h1>Search by Country</h1>
 
-<form action="" method="POST" style="margin-top: 20px;">
-    <div class="form-group">
-        <label style="font-size:20px;" class="control-label" for="CountrySearch"><strong>Enter Country</strong></label>
-        <input type="string" class="form-control" name="CountrySearch" id="CountrySearch" style="width:50%" />
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Search for Laureates" class="btn btn-primary" />
+
+<form action="" method="POST" style="margin-top: 50px;">
+    <div class="row">
+        <div class="form-group col-md-3">
+            <label for="CountrySearch">Enter Country</label>
+            <input type="string" class="form-control" name="CountrySearch" id="CountrySearch" />
+        </div>
+        <div class="form-group col-md-3">
+            <label for="Category">Category</label>
+            <select name="Category" class="form-control">
+                <option value="none" selected>Select a Category</option>
+                <option value="physics">Physics</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="peace">Peace</option>
+                <option value="medicine">Medicine</option>
+                <option value="literature">Literature</option>
+                <option value="economics">Economics</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="Year">Year</label>
+            <input type="number" required class="form-control" name="Year">
+        </div>
+        <div class="form-group col-md-3 align-self-sm-end">
+            <input class="btn btn-primary" id="submitButton" type="submit" value="Search Laureates">
+        </div>
     </div>
 </form>
 
@@ -37,7 +53,6 @@
                 <th>Year of Winning</th>
                 <th>Category</th>
                 <th>Share</th>
-
             </tr>
         </thead>
         <tbody>
@@ -71,6 +86,12 @@
 
         </tbody>
     </table>
-
 }
+else
+{
+    <div class="alert-warning">
+        No Data Found 
+    </div>
+}
+
 
