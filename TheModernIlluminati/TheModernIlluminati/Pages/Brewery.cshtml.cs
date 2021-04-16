@@ -13,7 +13,7 @@ namespace TheModernIlluminati.Pages
         {
             using (var webClient = new System.Net.WebClient())
             {
-                string breweryData = webClient.DownloadString("https://api.openbrewerydb.org/breweries?by_city=cincinnati&brewery_type=regional");
+                string breweryData = webClient.DownloadString("https://justbrewit2021.azurewebsites.net/OtherAPI");
                 Welcome[] brewery = Welcome.FromJson(breweryData);
                 ViewData["MyBreweryAPI"] = brewery;
             }

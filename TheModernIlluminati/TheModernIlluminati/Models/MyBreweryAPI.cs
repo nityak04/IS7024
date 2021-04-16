@@ -23,28 +23,28 @@ namespace QuickType
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("brewery_type")]
+        [JsonProperty("breweryType")]
         public BreweryType BreweryType { get; set; }
 
         [JsonProperty("street")]
         public string Street { get; set; }
 
-        [JsonProperty("address_2")]
+        [JsonProperty("address2")]
         public object Address2 { get; set; }
 
-        [JsonProperty("address_3")]
+        [JsonProperty("address3")]
         public object Address3 { get; set; }
 
         [JsonProperty("city")]
-        public City City { get; set; }
+        public string City { get; set; }
 
         [JsonProperty("state")]
-        public State State { get; set; }
+        public string State { get; set; }
 
-        [JsonProperty("county_province")]
+        [JsonProperty("countyProvince")]
         public object CountyProvince { get; set; }
 
-        [JsonProperty("postal_code")]
+        [JsonProperty("postalCode")]
         public string PostalCode { get; set; }
 
         [JsonProperty("country")]
@@ -59,23 +59,19 @@ namespace QuickType
         [JsonProperty("phone")]
         public string Phone { get; set; }
 
-        [JsonProperty("website_url")]
-        public string WebsiteUrl { get; set; }
+        [JsonProperty("websiteUrl")]
+        public Uri WebsiteUrl { get; set; }
 
-        [JsonProperty("updated_at")]
+        [JsonProperty("updatedAt")]
         public DateTimeOffset UpdatedAt { get; set; }
 
-        [JsonProperty("created_at")]
+        [JsonProperty("createdAt")]
         public DateTimeOffset CreatedAt { get; set; }
     }
 
-    public enum BreweryType { Brewpub, Micro, Planning, Regional };
-
-    public enum City { Cincinnati };
+    public enum BreweryType { Brewpub, Closed, Large, Micro };
 
     public enum Country { UnitedStates };
-
-    public enum State { Ohio };
 
     public partial class Welcome
     {
@@ -96,9 +92,7 @@ namespace QuickType
             Converters =
             {
                 BreweryTypeConverter.Singleton,
-                CityConverter.Singleton,
                 CountryConverter.Singleton,
-                StateConverter.Singleton,
                 new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
             },
         };
@@ -116,12 +110,12 @@ namespace QuickType
             {
                 case "brewpub":
                     return BreweryType.Brewpub;
+                case "closed":
+                    return BreweryType.Closed;
+                case "large":
+                    return BreweryType.Large;
                 case "micro":
                     return BreweryType.Micro;
-                case "planning":
-                    return BreweryType.Planning;
-                case "regional":
-                    return BreweryType.Regional;
             }
             throw new Exception("Cannot unmarshal type BreweryType");
         }
@@ -139,59 +133,20 @@ namespace QuickType
                 case BreweryType.Brewpub:
                     serializer.Serialize(writer, "brewpub");
                     return;
+                case BreweryType.Closed:
+                    serializer.Serialize(writer, "closed");
+                    return;
+                case BreweryType.Large:
+                    serializer.Serialize(writer, "large");
+                    return;
                 case BreweryType.Micro:
                     serializer.Serialize(writer, "micro");
-                    return;
-                case BreweryType.Planning:
-                    serializer.Serialize(writer, "planning");
-                    return;
-                case BreweryType.Regional:
-                    serializer.Serialize(writer, "regional");
                     return;
             }
             throw new Exception("Cannot marshal type BreweryType");
         }
 
         public static readonly BreweryTypeConverter Singleton = new BreweryTypeConverter();
-    }
-
-    internal class CityConverter : JsonConverter
-    {
-        public override bool CanConvert(Type t) => t == typeof(City) || t == typeof(City?);
-
-        public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
-        {
-            if (reader.TokenType == JsonToken.Null) return null;
-            var value = serializer.Deserialize<string>(reader);
-            if (value == "Cincinnati")
-            {
-                return City.Cincinnati;
-            }
-            else
-            {
-                return value;
-            }
-
-            throw new Exception("Cannot unmarshal type City");
-        }
-
-        public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
-        {
-            if (untypedValue == null)
-            {
-                serializer.Serialize(writer, null);
-                return;
-            }
-            var value = (City)untypedValue;
-            if (value == City.Cincinnati)
-            {
-                serializer.Serialize(writer, "Cincinnati");
-                return;
-            }
-            throw new Exception("Cannot marshal type City");
-        }
-
-        public static readonly CityConverter Singleton = new CityConverter();
     }
 
     internal class CountryConverter : JsonConverter
@@ -226,39 +181,5 @@ namespace QuickType
         }
 
         public static readonly CountryConverter Singleton = new CountryConverter();
-    }
-
-    internal class StateConverter : JsonConverter
-    {
-        public override bool CanConvert(Type t) => t == typeof(State) || t == typeof(State?);
-
-        public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
-        {
-            if (reader.TokenType == JsonToken.Null) return null;
-            var value = serializer.Deserialize<string>(reader);
-            if (value == "Ohio")
-            {
-                return State.Ohio;
-            }
-            throw new Exception("Cannot unmarshal type State");
-        }
-
-        public override void WriteJson(JsonWriter writer, object untypedValue, JsonSerializer serializer)
-        {
-            if (untypedValue == null)
-            {
-                serializer.Serialize(writer, null);
-                return;
-            }
-            var value = (State)untypedValue;
-            if (value == State.Ohio)
-            {
-                serializer.Serialize(writer, "Ohio");
-                return;
-            }
-            throw new Exception("Cannot marshal type State");
-        }
-
-        public static readonly StateConverter Singleton = new StateConverter();
     }
 }
